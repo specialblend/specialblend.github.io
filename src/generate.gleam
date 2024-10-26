@@ -22,8 +22,8 @@ pub fn main() {
     |> ssg.build
   let assert Ok(_) =
     simplifile.copy_directory("./priv/static", root_dir <> "/static")
-  let assert Ok(_) =
-    simplifile.copy_file("./.nojekyll", root_dir <> "/.nojekyll")
+  // let assert Ok(_) =
+  //   simplifile.copy_file("./.nojekyll", root_dir <> "/.nojekyll")
   case build {
     Ok(_) -> io.println("Build succeeded!")
     Error(e) -> {
