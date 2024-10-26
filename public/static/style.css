@@ -1,0 +1,337 @@
+* {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 300;
+    font-size: medium;
+    line-height: 1.7;
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    margin: 1rem;
+    color: var(--base);
+}
+
+a {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: inherit;
+}
+
+header {
+    margin-bottom: 1rem;
+}
+
+.stack > * + * {
+    margin-top: 1rem !important;
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        margin: 2rem;
+        width: 50%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        margin: 4rem;
+        width: 50%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    * {
+        font-size: large;
+    }
+}
+
+:root {
+    --indent: 1rem;
+
+    --base: #24292F;
+    --punctuation: #24292F;
+    --comment: #6A737D;
+    --keyword: #D73A4A;
+    --operator: #D73A4A;
+    --identifier: #6F42C1;
+    --string: #022F62;
+    --parens: #E36208;
+    --braces: #E36208;
+
+    --markdown-h1: #D73A4A;
+    --markdown-h2: #6F42C1;
+    --markdown-h3: #D73A4A;
+    --markdown-h4: #6F42C1;
+    --markdown-h5: #D73A4A;
+    --markdown-h6: #6F42C1;
+    --markdown-code-bg: #f6f8fa;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    html,
+    body {
+        color: var(--base);
+        background-color: #24292F;
+    }
+
+    a {
+        color: #beabde;
+    }
+
+    :root {
+        --base: #E2E4E8;
+        --punctuation: #E2E4E8;
+        --comment: #8A939D;
+        --keyword: #F87683;
+        --operator: #F87683;
+        --identifier: #B492F0;
+        --string: #9ECBFF;
+        --braces: #7AB7FF;
+
+        --markdown-h1: #B492F0;
+        --markdown-h2: #F87683;
+        --markdown-h3: #B492F0;
+        --markdown-h4: #F87683;
+        --markdown-h5: #B492F0;
+        --markdown-h6: #F87683;
+        --markdown-code-bg: #2D333B;
+    }
+}
+
+.fn h1 {
+    color: var(--identifier);
+    margin: 0;
+}
+
+.fn h1::before {
+    content: "fn ";
+    color: var(--keyword);
+}
+
+.pub.fn h1::before {
+    content: "pub fn ";
+    color: var(--keyword);
+}
+
+.fn h1::after {
+    content: " () {";
+    color: var(--braces);
+}
+
+.fn > section {
+    margin-left: var(--indent);
+}
+
+.fn::after {
+    content: "}";
+    color: var(--braces);
+}
+
+.let .var,
+.let .val,
+.const .var,
+.const .val {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.let .var {
+    color: var(--identifier);
+}
+
+.let .var::before {
+    content: "let ";
+    color: var(--keyword);
+}
+
+.let .var::after {
+    content: " = ";
+    color: var(--operator);
+}
+
+.const .var {
+    color: var(--identifier);
+}
+
+.const .var::before {
+    content: "const ";
+    color: var(--keyword);
+}
+
+.const .var::after {
+    content: " = ";
+    color: var(--operator);
+}
+
+.list p {
+    display: inline;
+}
+
+.list ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.list li {
+    list-style-type: none;
+    margin: 0 !important;
+    margin-left: var(--indent) !important;
+}
+
+.list p::after {
+    content: ",";
+    color: var(--punctuation);
+}
+
+.list ul::before {
+    content: "[";
+    color: var(--braces);
+}
+
+.list ul::after {
+    content: "]";
+    color: var(--braces);
+}
+
+.comment,
+.muted {
+    color: var(--comment);
+    margin: 0;
+}
+
+.comment::before {
+    content: "// ";
+    color: var(--comment);
+}
+
+.string {
+    color: var(--string);
+}
+
+.string::before,
+.string::after {
+    content: "\"";
+    color: var(--string);
+}
+
+.markdown header h1 a {
+    font-weight: bold;
+}
+
+.markdown header h1::before {
+    color: var(--identifier);
+    content: "# ";
+    font-weight: bold;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+    margin: 0 !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    font-weight: bold;
+}
+
+.markdown .content h1::before,
+.markdown .content h2::before,
+.markdown .content h3::before,
+.markdown .content h4::before,
+.markdown .content h5::before,
+.markdown .content h6::before {
+    content: "# ";
+    opacity: 0.666;
+    font-weight: bold;
+}
+
+.markdown .content h1 {
+    color: var(--markdown-h1);
+}
+
+.markdown .content h2 {
+    color: var(--markdown-h2);
+}
+
+.markdown .content h1::before {
+    color: var(--markdown-h1);
+}
+
+.markdown .content h2::before {
+    color: var(--markdown-h2);
+}
+
+.markdown .content h3,
+.markdown .content h3::before {
+    color: var(--markdown-h3);
+}
+
+.markdown .content h4,
+.markdown .content h4::before {
+    color: var(--markdown-h4);
+}
+
+.markdown .content h5,
+.markdown .content h5::before {
+    color: var(--markdown-h4);
+}
+
+.markdown .content h6,
+.markdown .content h6::before {
+    color: var(--markdown-h4);
+}
+
+.markdown ul {
+    /* https://github.com/Yasuo-Higano/kirala_bbmarkdown/issues/1 */
+    padding-left: 0.5rem;
+}
+
+.markdown li {
+    list-style-type: "- ";
+}
+
+.markdown pre {
+    background-color: var(--markdown-code-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+.markdown section {
+    margin-bottom: 2rem;
+}
+
+.typewriter {
+    color: #0000;
+    background:
+        linear-gradient(-90deg, var(--comment) 2px, #0000 0) 10px 0,
+        linear-gradient(var(--comment) 0 0) 0 0;
+    background-size: calc(var(--n)*1ch) 200%;
+    -webkit-background-clip: padding-box, text;
+    background-clip: padding-box, text;
+    background-repeat: no-repeat;
+    animation:
+        typing calc(var(--n)*var(--step)) steps(var(--n)) forwards
+}
+
+@keyframes typing {
+    from {
+        background-size: 0 200%
+    }
+}
+
+@keyframes blink {
+    50% {
+        background-position: 0 -100%,
+            0 0
+    }
+}

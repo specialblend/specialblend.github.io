@@ -7,7 +7,7 @@ import gleam/list
 import lustre/ssg
 import simplifile
 
-const root_dir = "./docs"
+const root_dir = "./public"
 
 pub fn main() {
   let assert Ok(posts) = posts.get_posts()
