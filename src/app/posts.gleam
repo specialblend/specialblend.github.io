@@ -102,7 +102,7 @@ fn timestamp(ts) {
   ts |> datetime.format("YYYY-MM-DD HH:mm")
 }
 
-const discussions = "https://api.github.com/repos/specialblend/specialblend.dev/discussions"
+const discussions = "https://api.github.com/repos/specialblend/specialblend.github.io/discussions"
 
 pub fn get_posts() {
   use uri <- try(uri.parse(discussions) |> expect("Failed to parse URI"))
