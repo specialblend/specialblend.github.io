@@ -15,10 +15,10 @@ pub fn layout(children) {
       ]),
       html.link([
         attr.rel("icon"),
-        attr.href("static/favicon.ico"),
+        attr.href("/static/favicon.ico"),
         attr.type_("image/x-icon"),
       ]),
-      html.link([attr.rel("stylesheet"), attr.href("static/style.css")]),
+      html.link([attr.rel("stylesheet"), attr.href("/static/style.css")]),
       html.link([
         attr.rel("preconnect"),
         attr.href("https://fonts.googleapis.com"),
@@ -44,7 +44,7 @@ pub fn layout(children) {
         ],
         "",
       ),
-      html.script([attr.src("static/script.js")], ""),
+      html.script([attr.src("/static/script.js")], ""),
     ]),
     html.body([attr.class("stack")], [
       html.header([], [
